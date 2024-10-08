@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+sales list
+{% endblock title %}
+
+{% block content %}
+<b> Sales list </b>
+<br>
+
+{% comment %} {% for obj in object_list %}
+    <a href= "{{obj.get_absolute_url}}">{{obj.transaction_id}}</a>
+    <br>
+{% endfor %} {% endcomment %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Created Date</th>
+      <th scope="col">Sale</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Customer</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for obj in object_list %}
+    <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td> {{obj.created}} </td>
+        <td> <a href= "{{obj.get_absolute_url}}">{{obj.transaction_id}}</a> </td>
+        <td> {{obj.total_price}} </td>
+        <td> {{obj.customer}} </td>
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock content %}
