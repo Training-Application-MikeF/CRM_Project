@@ -34,7 +34,7 @@ def get_key(res_by):
         key = 'created'
     return key
 
-def get_chart(chart_type, data, results_by, **kwargs):
+def get_chart(chart_type, data, results_by):
     plt.switch_backend('AGG')
     fig = plt.figure(figsize=(10,4))
     key = get_key(results_by)
