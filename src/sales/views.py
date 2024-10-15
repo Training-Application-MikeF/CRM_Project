@@ -99,9 +99,3 @@ def sale_detail_view(request, pk):
     # or
     # obj = get_object_or_404(Sale, pk=pk)
     return render(request, 'sales/detail.html', {'object':obj})
-
-    '''
-    in the urls:
-    path('sales/' sale_list_view, name='list'),
-    path('sales/<pk>/', sale_detail_view , name='detail'),
-    '''
