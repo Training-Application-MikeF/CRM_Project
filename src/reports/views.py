@@ -51,9 +51,6 @@ def csv_upload_view(request):
                 reader.__next__()
                 for row in reader:
                     data = row
-                    # data = "".join(row)
-                    # data = data.split(';')
-                    # data.pop()
                     transaction_id = data[1]
                     product = data[2]
                     quantity = int(data[3])
